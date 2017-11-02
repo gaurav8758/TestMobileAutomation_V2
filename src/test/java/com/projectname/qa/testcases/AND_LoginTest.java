@@ -1,5 +1,7 @@
 package com.projectname.qa.testcases;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -29,7 +31,8 @@ public class AND_LoginTest extends MobileTestBase{
 	}
 
 	@Test(priority=1, groups={"Android"},enabled=true)
-	public void And_Mobile_Login_Test001(){
+	public void And_Mobile_Login_Test001(Method method) throws InterruptedException{
+		System.out.println("Started Test:" + method.getName());
 		setup();
 		
 		//Welcome Screen 
@@ -37,7 +40,7 @@ public class AND_LoginTest extends MobileTestBase{
 		//SupportSelenium.ElementDisplayed(driver, WelcomeScreen.element_TextWelcome, "'Welcome to Whatsapp1' should be displayed in the screen.");
 		Assert.assertTrue(SupportSelenium.isElementPresent(driver, MobileTestBase.OR.element_TextWelcome), "'Welcome to Whatsapp' should be displayed in the screen.");
 		WelcomeScreen.btnAgreeAndContinue().click();
-		
+		Thread.sleep(5000);
 		//driver.findElement(By.id("com.whatsapp:id/eula_accept")).click();
 		//driver.findElement(By.id("com.whatsapp:id/cancel")).click();
 		
@@ -50,7 +53,8 @@ public class AND_LoginTest extends MobileTestBase{
 	
 	
 	@Test(priority=1, groups={"Android"},enabled=true)
-	public void And_Mobile_Login_Test003(){
+	public void And_Mobile_Login_Test003(Method method) throws InterruptedException{
+		System.out.println("Started Test:" + method.getName());
 		setup();
 		
 		//Welcome Screen 
@@ -58,6 +62,7 @@ public class AND_LoginTest extends MobileTestBase{
 		//SupportSelenium.ElementDisplayed(driver, WelcomeScreen.element_TextWelcome, "'Welcome to Whatsapp1' should be displayed in the screen.");
 		Assert.assertTrue(SupportSelenium.isElementPresent(driver, MobileTestBase.OR.element_TextWelcome), "'Welcome to Whatsapp' should be displayed in the screen.");
 		WelcomeScreen.btnAgreeAndContinue().click();
+		Thread.sleep(5000);
 		
 		//driver.findElement(By.id("com.whatsapp:id/eula_accept")).click();
 		//driver.findElement(By.id("com.whatsapp:id/cancel")).click();

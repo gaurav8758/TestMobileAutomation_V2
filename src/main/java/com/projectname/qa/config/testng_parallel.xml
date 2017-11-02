@@ -1,0 +1,93 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="1" name="Mobile Testing Suite" parallel="tests" thread-count="2">
+	    
+	<listeners>
+		<listener class-name="com.projectname.qa.util.AppiumDriverListener"></listener>
+		<listener class-name="com.projectname.qa.util.RetryListener"/>
+	</listeners>  
+
+    <!-- Common -->
+   	<parameter name="appiumVersion" value="1.7.1"/>
+   	
+    <!-- Report, Appium settings for both -->
+    <parameter name="extentReportsOverwrite" value="true"/>
+    <parameter name="extentReportsLocation" value="/Users/gaurava/Documents/Automation_Framework/Results"/>
+
+    <test name="IOSTesting" thread-count="1">    
+    	<parameter name="AppiumURL" value="http://127.0.0.1:4731/wd/hub"/>
+    	   
+        <!-- PlatformName (iOS/Android)         -->
+        <parameter name="platformName" value="iOS"/>
+       
+        <!-- PlatformVersion 
+        	for iOS phone - 11.0
+	        for iOS simulator - 11.0
+	        for Android - 6.0.1 
+        -->
+        <parameter name="platformVersion" value="11.1"/> 
+        
+        <!-- deviceName (iPhone 6s/iPhone 7/Nexus 5)         -->
+        <parameter name="deviceName" value="iPhone 6s"/>
+        
+         <!-- app is used for both         
+         example:
+         iOS simulator: /Users/gaurava/Library/Developer/Xcode/DerivedData/WebDriverAgent-brdadhpuduowllgivnnvuygpwhzy/Build/Products/Debug-iphonesimulator/IntegrationApp.app
+         iOS Phone: 	/Users/gaurava/Library/Developer/Xcode/DerivedData/WebDriverAgent-brdadhpuduowllgivnnvuygpwhzy/Build/Products/Debug-iphoneos/IntegrationApp.app
+         Android: ......apk
+         -->
+        <parameter name="app" value="/Users/gaurava/Library/Developer/Xcode/DerivedData/WebDriverAgent-brdadhpuduowllgivnnvuygpwhzy/Build/Products/Debug-iphoneos/IntegrationApp.app"/>
+        
+        <!-- Settings for only IOS -->
+        <parameter name="automationName" value="XCUITest"/>
+        <!-- Bundle ID
+        	iPhone - com.facebook.IntegrationApp875 
+        	Simulator - com.facebook.IntegrationApps12-->
+        <parameter name="bundleID" value="com.facebook.IntegrationApp101"/> 
+        <parameter name="udid" value="912741619a9e536ff768385652629d271c5d0a8c"></parameter>
+        <parameter name="xcodeOrgId" value="MH3J5ZTQ49"></parameter>
+        <parameter name="xcodeSigningId" value="iPhone Developer"></parameter>
+        
+        <!-- Settings for only ANDROID -->
+        <parameter name="appPackage" value="com.whatsapp"/>
+        <parameter name="appActivity" value="com.whatsapp.Main"/>
+       	
+       	<classes>
+	       	<class name="com.projectname.qa.testcases.IOS_LoginTest">
+			</class>
+		</classes>
+    </test>
+    
+    <test name="AndroidTesting" thread-count="1">     
+    	<parameter name="AppiumURL" value="http://127.0.0.1:4725/wd/hub"/>
+    	  
+        <!-- PlatformName (iOS/Android)         -->
+        <parameter name="platformName" value="Android"/>
+       
+        <!-- PlatformVersion 
+        	for iOS phone - 11.0
+	        for iOS simulator - 11.0
+	        for Android - 6.0.1 
+        -->
+        <parameter name="platformVersion" value="6.0.1"/> 
+        
+        <!-- deviceName (iPhone 6s/iPhone 7/Nexus 5)         -->
+        <parameter name="deviceName" value="Nexus 5"/>
+        
+         <!-- app is used for both         
+         example:
+         iOS simulator: /Users/gaurava/Library/Developer/Xcode/DerivedData/WebDriverAgent-brdadhpuduowllgivnnvuygpwhzy/Build/Products/Debug-iphonesimulator/IntegrationApp.app
+         iOS Phone: 	/Users/gaurava/Library/Developer/Xcode/DerivedData/WebDriverAgent-brdadhpuduowllgivnnvuygpwhzy/Build/Products/Debug-iphoneos/IntegrationApp.app
+         Android: ......apk
+         -->
+        <parameter name="app" value=""/>
+        
+        <!-- Settings for only ANDROID -->
+        <parameter name="appPackage" value="com.whatsapp"/>
+        <parameter name="appActivity" value="com.whatsapp.Main"/>
+       	
+       	<classes>
+	       	<class name="com.projectname.qa.testcases.AND_LoginTest">
+			</class>
+		</classes>
+    </test>
+</suite>

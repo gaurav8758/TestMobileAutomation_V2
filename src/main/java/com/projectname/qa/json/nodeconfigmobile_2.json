@@ -1,0 +1,30 @@
+{
+    "capabilities":
+ [ 
+   { 
+     "browserName": "iOS",
+          "version":"11.1",
+          "maxInstances": 1,
+          "platform":"iOS",
+	  "deviceName":"iPhone 6s"	  
+		  }], 
+	
+    "configuration":
+   { 
+"deviceName":"iPhone 6s",
+    "nodeTimeout":120, 
+    "port":4731, 
+    "hubPort":4444,
+    "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+    "url":"http://127.0.0.1:4731/wd/hub",
+    "hub": "http://169.254.112.252:4444/grid/register/",
+    "hubHost":"127.0.0.1",
+    "nodePolling":2000, 
+    "registerCycle":10000,
+    "register":true,
+    "cleanUpCycle":2000, 
+    "timeout":30000, 
+    "maxSession":1
+ } 
+   } 
+  

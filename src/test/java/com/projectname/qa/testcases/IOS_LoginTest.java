@@ -1,5 +1,7 @@
 package com.projectname.qa.testcases;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -22,26 +24,34 @@ public class IOS_LoginTest extends MobileTestBase{
 	}
 	
 	@Test(groups={"IOS"})
-	public void IOS_FirstTest() throws InterruptedException {
+	public void IOS_FirstTest(Method method) throws InterruptedException {
+		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
+		Thread.sleep(5000);
 	}
 	
 	@Test(groups={"IOS"})
-	public void IOS_SecondTest() throws InterruptedException {
+	public void IOS_SecondTest(Method method) throws InterruptedException {
+		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
+		Thread.sleep(5000);
 	}
 	
 	@Test(groups={"IOS"})
-	public void IOS_ThirdTest() throws InterruptedException {
+	public void IOS_ThirdTest(Method method) throws InterruptedException {
+		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
+		Thread.sleep(5000);
 	}
 	
 	@Test(groups={"IOS"})
-	public void IOS_FourthTest() throws InterruptedException {
+	public void IOS_FourthTest(Method method) throws InterruptedException {
+		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
+		Thread.sleep(5000);
 	}
 }
