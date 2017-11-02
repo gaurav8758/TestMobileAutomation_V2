@@ -1,12 +1,6 @@
 package com.projectname.qa.util;
 
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.net.UrlChecker;
-
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 

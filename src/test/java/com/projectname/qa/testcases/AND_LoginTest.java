@@ -3,10 +3,8 @@ package com.projectname.qa.testcases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.gargoylesoftware.htmlunit.javascript.host.Screen;
 import com.projectname.qa.base.MobileTestBase;
 import com.projectname.qa.screens.Screen_Welcome;
 import com.projectname.qa.util.*;

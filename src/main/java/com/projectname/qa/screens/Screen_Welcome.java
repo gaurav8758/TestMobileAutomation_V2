@@ -1,13 +1,10 @@
 package com.projectname.qa.screens;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.projectname.qa.base.MobileTestBase;
-import com.projectname.qa.objectrepository.ObjectRepository;
 import com.projectname.qa.util.ExtentTestManager;
-import com.projectname.qa.util.Verify;
 import com.relevantcodes.extentreports.LogStatus;
 
 

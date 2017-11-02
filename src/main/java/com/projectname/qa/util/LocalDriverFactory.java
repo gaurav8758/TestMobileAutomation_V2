@@ -1,7 +1,6 @@
 package com.projectname.qa.util;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.ios.IOSDriver;
@@ -14,7 +13,6 @@ import java.net.URL;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.projectname.qa.base.MobileTestBase;
-import com.relevantcodes.extentreports.LogStatus;
 
 public class LocalDriverFactory {
     static synchronized AppiumDriver<?> createInstance(String platformName)  {

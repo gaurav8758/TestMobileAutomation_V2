@@ -1,8 +1,6 @@
 package com.projectname.qa.screens;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-
 import com.projectname.qa.util.ExtentTestManager;
 import com.relevantcodes.extentreports.LogStatus;
 
