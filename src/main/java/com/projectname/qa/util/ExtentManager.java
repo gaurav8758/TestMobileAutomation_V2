@@ -3,6 +3,8 @@ package com.projectname.qa.util;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import com.projectname.qa.base.MobileTestBase;
 import com.relevantcodes.extentreports.DisplayOrder;
@@ -11,7 +13,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 public class ExtentManager {
     static ExtentReports extent;
     //final static String filePath = System.getProperty("user.dir") + "\\test-output\\ExtentReport.html";
-    final static Path filePath = Paths.get(MobileTestBase.GlobalExtentReportsLocation + File.separator +"ExtentReport.html");
+    final static Path filePath = Paths.get(MobileTestBase.GlobalExtentReportsLocation + File.separator +"ExtentReport" + timestamp() + ".html");
     
     public synchronized static ExtentReports getReporter() {
         if (extent == null) {
@@ -37,5 +39,9 @@ public class ExtentManager {
         }
         
         return extent;
+    }
+    
+    private static String timestamp() {
+        return new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
     }
 }

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -85,15 +86,16 @@ public class MobileTestBase {
     	GlobalExtentReportsLocation = extentReportsLocation;
     	
         ExtentTestManager.startTest(method.getName());
-		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         
         if (GlobalThreadVariables.getplatformName().equalsIgnoreCase("android"))
         {
         	OR = new AndroidObjectRespository();
+        	ExtentTestManager.getTest().log(LogStatus.PASS, "<font color=green><B>Object Repository:</B></font> Android Object Repository attached");
         }
         else if (GlobalThreadVariables.getplatformName().equalsIgnoreCase("ios"))
         {
         	OR = new IOSObjectRespository();
+        	ExtentTestManager.getTest().log(LogStatus.PASS, "<font color=green><B>Object Repository:</B></font> IOS Object Repository attached");
         }
 	}
 	
@@ -102,6 +104,7 @@ public class MobileTestBase {
         //System.out.println("Thread id = " + Thread.currentThread().getId());
         //System.out.println("Hashcode of webDriver instance = " + LocalDriverManager.getDriver().hashCode());
         driver = LocalDriverManager.getDriver();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         
 		e_driver = new EventFiringWebDriver(driver);
 		// Now create object of EventListerHandler to register it with EventFiringWebDriver

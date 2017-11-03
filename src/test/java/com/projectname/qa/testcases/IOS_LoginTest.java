@@ -28,7 +28,6 @@ public class IOS_LoginTest extends MobileTestBase{
 		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
-		Thread.sleep(5000);
 	}
 	
 	@Test(groups={"IOS"})
@@ -36,7 +35,6 @@ public class IOS_LoginTest extends MobileTestBase{
 		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
-		Thread.sleep(5000);
 	}
 	
 	@Test(groups={"IOS"})
@@ -44,7 +42,6 @@ public class IOS_LoginTest extends MobileTestBase{
 		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
-		Thread.sleep(5000);
 	}
 	
 	@Test(groups={"IOS"})
@@ -52,6 +49,5 @@ public class IOS_LoginTest extends MobileTestBase{
 		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
-		Thread.sleep(5000);
 	}
 }

@@ -44,6 +44,12 @@ public class AppiumDriverListener implements IInvokedMethodListener {
  
     public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
         if (method.isTestMethod()) {
+        	try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         	ExtentTestManager.getTest().log(LogStatus.PASS, "<font color=GREEN><B>Closing Browser / App</B></font>");
             WebDriver driver = LocalDriverManager.getDriver();
             if (null!=driver) {

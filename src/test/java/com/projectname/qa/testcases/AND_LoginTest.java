@@ -38,9 +38,8 @@ public class AND_LoginTest extends MobileTestBase{
 		//Welcome Screen 
 		Screen_Welcome WelcomeScreen = PageFactory.initElements(driver, Screen_Welcome.class);
 		//SupportSelenium.ElementDisplayed(driver, WelcomeScreen.element_TextWelcome, "'Welcome to Whatsapp1' should be displayed in the screen.");
-		Assert.assertTrue(SupportSelenium.isElementPresent(driver, MobileTestBase.OR.element_TextWelcome), "'Welcome to Whatsapp' should be displayed in the screen.");
+		Assert.assertTrue(SupportSelenium.isElementPresent(driver, MobileTestBase.OR.element_TextWelcome), "'Welcome to WhatsApp' should be displayed in the screen.");
 		WelcomeScreen.btnAgreeAndContinue().click();
-		Thread.sleep(5000);
 		//driver.findElement(By.id("com.whatsapp:id/eula_accept")).click();
 		//driver.findElement(By.id("com.whatsapp:id/cancel")).click();
 		
@@ -60,9 +59,8 @@ public class AND_LoginTest extends MobileTestBase{
 		//Welcome Screen 
 		Screen_Welcome WelcomeScreen = PageFactory.initElements(driver, Screen_Welcome.class);
 		//SupportSelenium.ElementDisplayed(driver, WelcomeScreen.element_TextWelcome, "'Welcome to Whatsapp1' should be displayed in the screen.");
-		Assert.assertTrue(SupportSelenium.isElementPresent(driver, MobileTestBase.OR.element_TextWelcome), "'Welcome to Whatsapp' should be displayed in the screen.");
+		Assert.assertTrue(SupportSelenium.isElementPresent(driver, MobileTestBase.OR.element_TextWelcome), "'Welcome to WhatsApp' should be displayed in the screen.");
 		WelcomeScreen.btnAgreeAndContinue().click();
-		Thread.sleep(5000);
 		
 		//driver.findElement(By.id("com.whatsapp:id/eula_accept")).click();
 		//driver.findElement(By.id("com.whatsapp:id/cancel")).click();
