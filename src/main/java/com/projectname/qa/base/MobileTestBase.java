@@ -25,6 +25,7 @@ import com.projectname.qa.objectrepository.ObjectRepository;
 import com.projectname.qa.util.AppiumEventListener;
 import com.projectname.qa.util.ExtentManager;
 import com.projectname.qa.util.ExtentTestManager;
+import com.projectname.qa.util.GlobalThreadVariables;
 import com.projectname.qa.util.LocalDriverManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -40,20 +41,7 @@ public class MobileTestBase {
 	public static Properties prop;
 	public static EventFiringWebDriver e_driver;
 	public static AppiumEventListener eventListener;
-
-	public static String GloballocalappURL=null;
-	public static String GlobaldeviceName;
-	public static String GlobalplatformVersion;
-	public static String GlobalplatformName;
-	public static String GlobalappiumURL;
-	public static String GlobalappPackage;
-	public static String GlobalappActivity;
-	public static String GlobalappiumVersion;
-	public static String GlobalAutomationName;
-	public static String GlobalBundleID;
-	public static String GlobalUDID;
-	public static String GlobalxcodeOrgId;
-	public static String GlobalxcodeSigningId;
+	
 	public static ObjectRepository OR;
 	
 	public static boolean GlobalExtentReportsOverWrite=false;
@@ -86,46 +74,24 @@ public class MobileTestBase {
 			boolean extentReportsOverwrite, String extentReportsLocation,
 			Method method
 			) throws InterruptedException, MalformedURLException{
-/*		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability("appium-version", appiumVersion);
-		cap.setCapability("platformName", platformName);
-		cap.setCapability("platformVersion", platformVersion);
-		cap.setCapability("automationName", automationName);
-		cap.setCapability("deviceName", deviceName);
-		cap.setCapability("app", app);
-		cap.setCapability("bundleID", bundleID);*/
 		
-		//iOS
-		GlobalappiumVersion = appiumVersion;
-    	GlobalplatformName=platformName;
-    	GlobalplatformVersion=platformVersion;
-    	GlobalAutomationName=automationName;
-    	GlobaldeviceName = deviceName;
-		GloballocalappURL=app;
-    	GlobalBundleID = bundleID;
-    	GlobalUDID = udid;
-    	GlobalxcodeOrgId = xcodeOrgId;
-    	GlobalxcodeSigningId = xcodeSigningId;
-    	
+		
+		new GlobalThreadVariables(appiumVersion, platformName, platformVersion, automationName,
+				deviceName, app, bundleID, udid, xcodeOrgId, xcodeSigningId, appPackage, 
+				appActivity, AppiumURL);
+		
     	//both use reporting
     	GlobalExtentReportsOverWrite = Boolean.valueOf(extentReportsOverwrite);
     	GlobalExtentReportsLocation = extentReportsLocation;
     	
-    	//specific to Android
-    	GlobalappPackage=appPackage;
-    	GlobalappActivity=appActivity;
-    	
-    	//both use appium
-    	GlobalappiumURL=AppiumURL;
-    	
         ExtentTestManager.startTest(method.getName());
 		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         
-        if (GlobalplatformName.equalsIgnoreCase("android"))
+        if (GlobalThreadVariables.getplatformName().equalsIgnoreCase("android"))
         {
         	OR = new AndroidObjectRespository();
         }
-        else if (GlobalplatformName.equalsIgnoreCase("ios"))
+        else if (GlobalThreadVariables.getplatformName().equalsIgnoreCase("ios"))
         {
         	OR = new IOSObjectRespository();
         }

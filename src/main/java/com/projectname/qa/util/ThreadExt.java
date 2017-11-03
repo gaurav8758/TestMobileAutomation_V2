@@ -25,7 +25,7 @@ public class ThreadExt extends Thread {
 	  private static Long GetSleepTime(WaitTime sleepTime) {
 		// TODO Auto-generated method stub
 		Long GetSleepTime = 0L;
-		switch (MobileTestBase.GlobalplatformName.trim().toLowerCase()) {
+		switch (GlobalThreadVariables.getplatformName().trim().toLowerCase()) {
 		case "android":
 			switch (sleepTime) {
 				case High:

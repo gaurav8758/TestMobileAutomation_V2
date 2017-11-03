@@ -19,27 +19,27 @@ public class LocalDriverFactory {
         AppiumDriver<?> Localdriver = null;
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("appium-version", MobileTestBase.GlobalappiumVersion);
-        capabilities.setCapability("deviceName", MobileTestBase.GlobaldeviceName);
-    	capabilities.setCapability("platformVersion", MobileTestBase.GlobalplatformVersion);
-    	capabilities.setCapability("platformName", MobileTestBase.GlobalplatformName);
+        capabilities.setCapability("appium-version", GlobalThreadVariables.getappiumVersion());
+        capabilities.setCapability("deviceName", GlobalThreadVariables.getdeviceName());
+    	capabilities.setCapability("platformVersion", GlobalThreadVariables.getplatformVersion());
+    	capabilities.setCapability("platformName", GlobalThreadVariables.getplatformName());
 
-   		if ((null!=MobileTestBase.GloballocalappURL) && !(MobileTestBase.GloballocalappURL.equalsIgnoreCase("")))
+   		if ((null!=GlobalThreadVariables.getlocalappURL()) && !(GlobalThreadVariables.getlocalappURL().equalsIgnoreCase("")))
    		{
-   			File app = new File(MobileTestBase.GloballocalappURL);
+   			File app = new File(GlobalThreadVariables.getlocalappURL());
    			capabilities.setCapability("app", app.getAbsolutePath());
    		}
    		else
    		{
-        	capabilities.setCapability("appPackage", MobileTestBase.GlobalappPackage);
-        	capabilities.setCapability("appActivity", MobileTestBase.GlobalappActivity);
+        	capabilities.setCapability("appPackage", GlobalThreadVariables.getappPackage());
+        	capabilities.setCapability("appActivity", GlobalThreadVariables.getappActivity());
    		}
    		
    		//Checking the Appium server URL
    		String AppiumServerURL = "";
-   		if ((null!=MobileTestBase.GlobalappiumURL) && !(MobileTestBase.GlobalappiumURL.equalsIgnoreCase("")))
+   		if ((null!=GlobalThreadVariables.getappiumURL()) && !(GlobalThreadVariables.getappiumURL().equalsIgnoreCase("")))
    		{
-   			AppiumServerURL = MobileTestBase.GlobalappiumURL;
+   			AppiumServerURL = GlobalThreadVariables.getappiumURL();
    		}
    		
    		if (platformName.equalsIgnoreCase("android"))
@@ -61,11 +61,11 @@ public class LocalDriverFactory {
    			IOSDriver<IOSElement>driver=null;
 			try 
 			{
-				capabilities.setCapability("xcodeOrgId", MobileTestBase.GlobalxcodeOrgId);
-				capabilities.setCapability("xcodeSigningId", MobileTestBase.GlobalxcodeSigningId);
-				capabilities.setCapability("udid", MobileTestBase.GlobalUDID);
-				capabilities.setCapability("automationName", MobileTestBase.GlobalAutomationName);
-				capabilities.setCapability("bundleID", MobileTestBase.GlobalBundleID);
+				capabilities.setCapability("xcodeOrgId", GlobalThreadVariables.getxcodeOrgId());
+				capabilities.setCapability("xcodeSigningId", GlobalThreadVariables.getxcodeSigningId());
+				capabilities.setCapability("udid", GlobalThreadVariables.getUDID());
+				capabilities.setCapability("automationName", GlobalThreadVariables.getAutomationName());
+				capabilities.setCapability("bundleID", GlobalThreadVariables.getBundleID());
 				driver = new IOSDriver<IOSElement>(new URL(AppiumServerURL), capabilities);
 			} 
 			catch (MalformedURLException e) 
