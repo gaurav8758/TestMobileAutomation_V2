@@ -1,6 +1,5 @@
 package com.projectname.qa.util;
 
-
 import com.projectname.qa.objectrepository.ObjectRepository;
 
 public class GlobalThreadVariables {
