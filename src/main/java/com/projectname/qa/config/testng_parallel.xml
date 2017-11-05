@@ -42,7 +42,7 @@
         <!-- Bundle ID
         	iPhone - com.facebook.IntegrationApp875 
         	Simulator - com.facebook.IntegrationApps12-->
-        <parameter name="bundleID" value="com.facebook.IntegrationApp101"/> 
+        <parameter name="bundleID" value="com.facebook.IntegrationApp102"/> 
         <parameter name="udid" value="912741619a9e536ff768385652629d271c5d0a8c"></parameter>
         <parameter name="xcodeOrgId" value="MH3J5ZTQ49"></parameter>
         <parameter name="xcodeSigningId" value="iPhone Developer"></parameter>

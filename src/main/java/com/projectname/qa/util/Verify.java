@@ -31,7 +31,7 @@ public class Verify extends Assertion
 		try
 		{
 			super.assertTrue(condition, message);
-			ExtentTestManager.getTest().log(LogStatus.PASS, message,"Condition met.");  
+			ExtentTestManager.getTest().log(LogStatus.PASS, message + "<br />Condition met.");  
 		}
 		catch(AssertionError ex)
 		{
@@ -58,7 +58,7 @@ public class Verify extends Assertion
 		try
 		{
 			super.assertFalse(condition, message);
-			ExtentTestManager.getTest().log(LogStatus.PASS, message,"Condition met.");  
+			ExtentTestManager.getTest().log(LogStatus.PASS, message + "<br />Condition met.");  
 		}
 		catch(AssertionError ex)
 		{

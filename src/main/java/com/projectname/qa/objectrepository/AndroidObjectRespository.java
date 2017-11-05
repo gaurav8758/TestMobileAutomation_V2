@@ -7,7 +7,7 @@ public class AndroidObjectRespository extends ObjectRepository{
 	
 	//Welcome Page Objects
 	btnAgreeAndContinue = By.id("com.whatsapp:id/eula_accept");
-	element_TextWelcome = By.xpath("//android.widget.TextView[@text='Welcome to WhatsApp']");
+	element_TextWelcome = By.xpath("//*[@text='Welcome to WhatsApp']");
 	
 	//VerifyYourPhoneNumber Page Objects
 	}

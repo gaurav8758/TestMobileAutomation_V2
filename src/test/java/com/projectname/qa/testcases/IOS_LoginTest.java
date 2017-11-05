@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import com.projectname.qa.base.MobileTestBase;
 import com.projectname.qa.util.ExtentTestManager;
+import com.projectname.qa.util.Keyword;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class IOS_LoginTest extends MobileTestBase{
@@ -23,11 +24,12 @@ public class IOS_LoginTest extends MobileTestBase{
 		ExtentTestManager.getTest().log(LogStatus.PASS, "<font color=GREEN><B>Setup Completed</B></font>");
 	}
 	
-	@Test(groups={"IOS"})
+	@Test(groups={"IOS1"})
 	public void IOS_FirstTest(Method method) throws InterruptedException {
 		System.out.println("Started Test:" + method.getName());
 		setup();
 		driver.findElement(MobileTestBase.OR.link_Alerts).click();
+		Keyword.Button(driver, "Create App Alert").click();
 	}
 	
 	@Test(groups={"IOS"})

@@ -7,11 +7,12 @@ public class IOSObjectRespository extends ObjectRepository{
 		
 	//Welcome Page Objects
 	btnAgreeAndContinue = By.id("com.whatsapp:id/eula_accept");
-	element_TextWelcome = By.xpath("//android.widget.TextView[@text='Welcome to asdfa']");
+	element_TextWelcome = By.xpath("//*[@text='Welcome to WhatsApp']");
 	
 	//VerifyYourPhoneNumber Page Objects
 	
 	//Default page for IOS
 	link_Alerts = By.xpath("//XCUIElementTypeButton[@name='Alerts']");
+	
 	}
 }
